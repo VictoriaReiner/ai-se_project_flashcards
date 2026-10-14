@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Victoria Reiner" />
+    <meta
+      name="description"
+      content="A personal collection of study aids, flashcards, and learning materials."
+    />
+    <meta
+      name="keywords"
+      content="study aids, flashcards, learning material, learning how to code"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>My collection</title>
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href="assets/vendor/normalize.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="assets/js/index.js" type="module"></script>
+  </head>
+  <body class="page">
+    <!--HEADER SECTION-->
+    <header class="header">
+      <h2 class="header__title">
+        <a href="#" class="header__link">Flash Cards</a>
+      </h2>
+
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="#home" class="nav__link">My Decks</a>
+          </li>
+          <li class="nav__item">
+            <a href="#about" class="nav__link">About</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!--MAIN SECTION - CARDS-->
+    <main class="page__main-content">
+      <section class="decks" id="home">
+        <h1 class="decks__title">My Decks</h1>
+
+        <!--JS-->
+        <ul class="decks__list"></ul>
+
+        <!--CARDS TO CLONE-->
+        <template id="deck-template">
+          <div class="deck deck--green">
+            <a href="#" class="deck__link"></a>
+            <h2 class="deck__title"></h2>
+            <div class="deck__row">
+              <p class="deck__count"></p>
+              <button
+                class="deck__delete-btn"
+                type="button"
+                aria-label="Delete this deck"
+              >
+                <img src="assets/images/delete.svg" alt="Delete" />
+              </button>
+            </div>
+          </div>
+        </template>
+
+        <!--BUTTON TO ADD NEW DECK-->
+        <button class="decks__new-deck-btn" type="button" aria-label="New deck">
+          + New Deck
+        </button>
+      </section>
+
+      <!--CAROUSEL SECTION-->
+      <section class="carousel" id="carousel">
+        <h2 class="carousel__title">HTML Tag Decks &middot; 1/10</h2>
+
+        <div class="carousel__wrapper">
+          <button
+            class="carousel__btn carousel__btn_type_left carousel__btn_disabled"
+            type="button"
+            aria-label="Go back"
+          >
+            <img src="assets/images/left.svg" alt="Go Back" />
+          </button>
+
+          <div class="deck deck--green carousel__card">
+            <p class="carousel__card-text">&lt;body&gt;&lt;/body&gt;</p>
+          </div>
+
+          <button
+            class="carousel__btn carousel__btn_type_right"
+            type="button"
+            aria-label="Go forward"
+          >
+            <img src="assets/images/right.svg" alt="Go Forward" />
+          </button>
+        </div>
+
+        <button
+          class="carousel__btn carousel__btn_type_flip"
+          type="button"
+          aria-label="Flip"
+        >
+          <img src="assets/images/flip.svg" alt="Flip" />
+        </button>
+      </section>
+
+      <!--404 SECTION-->
+      <section id="not-found" class="not-found">
+        <h2 class="not-found__status-code">404</h2>
+        <p class="not-found__text">Sorry, nothing found!</p>
+      </section>
+    </main>
+
+    <!--FOOTER SECTION-->
+    <footer class="footer">
+      <p class="footer__text">© 2026 Victoria Reiner</p>
+    </footer>
+  </body>
+</html>
