@@ -22,7 +22,7 @@ export function removeColorClasses(element) {
   if (!element) return;
   const classes = Array.from(element.classList);
   classes.forEach((className) => {
-    if (className.includes("color_") || className.includes("deck--")) {
+    if (className.includes("color_") || className.includes("card--")) {
       element.classList.remove(className);
     }
   });

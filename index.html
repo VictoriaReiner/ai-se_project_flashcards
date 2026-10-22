@@ -44,21 +44,21 @@
 
     <!--MAIN SECTION - CARDS-->
     <main class="page__main-content">
-      <section class="decks" id="home">
-        <h1 class="decks__title">My Decks</h1>
+      <section class="gallery" id="home">
+        <h1 class="gallery__title">My Decks</h1>
 
         <!--JS-->
-        <ul class="decks__list"></ul>
+        <ul class="gallery__list"></ul>
 
         <!--CARDS TO CLONE-->
         <template id="deck-template">
-          <div class="deck deck--green">
-            <a href="#" class="deck__link"></a>
-            <h2 class="deck__title"></h2>
-            <div class="deck__row">
-              <p class="deck__count"></p>
+          <div class="card card--green">
+            <a href="#" class="card__link"></a>
+            <h2 class="card__title"></h2>
+            <div class="card__row">
+              <p class="card__count"></p>
               <button
-                class="deck__delete-btn"
+                class="card__delete-btn"
                 type="button"
                 aria-label="Delete this deck"
               >
@@ -69,7 +69,11 @@
         </template>
 
         <!--BUTTON TO ADD NEW DECK-->
-        <button class="decks__new-deck-btn" type="button" aria-label="New deck">
+        <button
+          class="gallery__new-card-btn"
+          type="button"
+          aria-label="New deck"
+        >
           + New Deck
         </button>
       </section>
@@ -87,7 +91,7 @@
             <img src="assets/images/left.svg" alt="Go Back" />
           </button>
 
-          <div class="deck deck--green carousel__card">
+          <div class="card card--green carousel__card">
             <p class="carousel__card-text">&lt;body&gt;&lt;/body&gt;</p>
           </div>
 
