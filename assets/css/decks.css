@@ -1,0 +1,40 @@
+.decks {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.decks__title {
+  width: 100%;
+  font-weight: 700;
+  font-size: 40px;
+  margin: 0;
+  margin-bottom: 40px;
+}
+
+.decks__list {
+  display: contents;
+}
+
+.decks__new-deck-btn {
+  width: 325px;
+  height: 205px;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #d9d9d9;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.2;
+  color: #1a1a1a;
+}
+
+.decks__new-deck-btn:hover {
+  background-color: #c5c5c5;
+  color: #1a1a1a;
+}

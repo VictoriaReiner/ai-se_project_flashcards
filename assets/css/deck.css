@@ -1,0 +1,75 @@
+.deck {
+  width: 325px;
+  height: 205px;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.deck__link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.deck__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.deck__delete-btn {
+  height: 24px;
+  width: 24px;
+  opacity: 0.5;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  z-index: 2;
+}
+
+.deck__delete-btn:hover {
+  opacity: 1;
+}
+
+.deck--green {
+  background-color: #64d583;
+}
+
+.deck--blue {
+  background-color: #91a8f9;
+}
+
+.deck--pink {
+  background-color: #ee92d7;
+}
+
+.deck--purple {
+  background-color: #aa8ef0;
+}
+
+.deck--orange {
+  background-color: #ee955e;
+}
+
+.deck--yellow {
+  background-color: #f5d770;
+}
+
+.deck__title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.deck__count {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.2;
+}
