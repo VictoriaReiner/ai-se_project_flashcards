@@ -17,14 +17,14 @@ export function createDeckEl(item) {
     deckElement.classList.add(`card--${colorName}`);
   }
 
-  const deleteButton = deckElement.querySelector(".card__delete-btn");
+  const deleteButton = deckElement.querySelector(".card__btn_type_delete");
   deleteButton?.addEventListener("click", () => {
     deckElement.remove();
   });
 
   const deckLink = deckElement.querySelector(".card__link");
   if (deckLink) {
-    deckLink.href = `#carousel/${item.id}`;
+    deckLink.href = `#deck/${item.id}`;
   }
 
   const titleElement = deckElement.querySelector(".card__title");
@@ -116,26 +116,29 @@ export function renderCarouselView(deck) {
     }
   }
 
-  flipButton?.addEventListener("click", () => {
-    showingQuestion = !showingQuestion;
-    updateDisplay();
-  });
-
-  leftButton?.addEventListener("click", () => {
-    if (currentCardIndex > 0) {
-      currentCardIndex--;
-      showingQuestion = true;
+  if (flipButton)
+    flipButton.onclick = () => {
+      showingQuestion = !showingQuestion;
       updateDisplay();
-    }
-  });
+    };
 
-  rightButton?.addEventListener("click", () => {
-    if (deck && currentCardIndex < deck.cards.length - 1) {
-      currentCardIndex++;
-      showingQuestion = true;
-      updateDisplay();
-    }
-  });
+  if (leftButton)
+    leftButton.onclick = () => {
+      if (currentCardIndex > 0) {
+        currentCardIndex--;
+        showingQuestion = true;
+        updateDisplay();
+      }
+    };
+
+  if (rightButton)
+    rightButton.onclick = () => {
+      if (deck && currentCardIndex < deck.cards.length - 1) {
+        currentCardIndex++;
+        showingQuestion = true;
+        updateDisplay();
+      }
+    };
 
   updateDisplay();
 }

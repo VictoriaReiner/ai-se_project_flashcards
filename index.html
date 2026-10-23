@@ -58,26 +58,28 @@
             <div class="card__row">
               <p class="card__count"></p>
               <button
-                class="card__delete-btn"
+                class="card__btn card__btn_type_delete"
                 type="button"
                 aria-label="Delete this deck"
-              >
-                <img src="assets/images/delete.svg" alt="Delete" />
-              </button>
+              ></button>
             </div>
           </div>
         </template>
 
-        <!-- Existing deck template -->
+        <!-- FLASHCARD TEMPLATE -->
         <template id="flashcard-template">
           <li class="card">
             <h3 class="card__title"></h3>
             <div class="card__row">
-              <p class="card__count"></p>
               <button
                 type="button"
                 aria-label="Flip this card"
-                class="card__flip-btn"
+                class="card__btn card__btn_type_flip"
+              ></button>
+              <button
+                class="card__btn card__btn_type_delete"
+                type="button"
+                aria-label="Delete this card"
               ></button>
             </div>
           </li>
