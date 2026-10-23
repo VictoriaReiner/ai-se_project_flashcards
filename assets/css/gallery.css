@@ -17,7 +17,7 @@
   display: contents;
 }
 
-.gallery__new-card-btn {
+.gallery__new-deck-btn {
   width: 325px;
   height: 205px;
   padding: 20px;
@@ -34,7 +34,7 @@
   color: #1a1a1a;
 }
 
-.gallery__new-card-btn:hover {
+.gallery__new-deck-btn:hover {
   background-color: #c5c5c5;
   color: #1a1a1a;
 }

@@ -68,14 +68,43 @@
           </div>
         </template>
 
+        <!-- Existing deck template -->
+        <template id="flashcard-template">
+          <li class="card">
+            <h3 class="card__title"></h3>
+            <div class="card__row">
+              <p class="card__count"></p>
+              <button
+                type="button"
+                aria-label="Flip this card"
+                class="card__flip-btn"
+              ></button>
+            </div>
+          </li>
+        </template>
+
         <!--BUTTON TO ADD NEW DECK-->
         <button
-          class="gallery__new-card-btn"
+          class="gallery__new-deck-btn"
           type="button"
           aria-label="New deck"
         >
           + New Deck
         </button>
+      </section>
+
+      <!-- Existing home section -->
+      <section id="deck-view" class="gallery">
+        <div class="gallery__header">
+          <h2 class="gallery__title"></h2>
+          <button type="button" class="gallery__practice-btn">Practice</button>
+        </div>
+        <div class="wrapping-row">
+          <ul class="gallery__list wrapping-row__display-contents"></ul>
+          <button type="button" class="gallery__new-card-btn">
+            + New Card
+          </button>
+        </div>
       </section>
 
       <!--CAROUSEL SECTION-->
