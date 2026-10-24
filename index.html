@@ -21,7 +21,6 @@
     <title>My collection</title>
     <link rel="icon" href="favicon.ico" />
     <link rel="stylesheet" href="assets/css/index.css" />
-    <link rel="stylesheet" href="assets/css/mobile-bar.css" />
     <script src="assets/js/index.js" type="module"></script>
   </head>
   <body class="page">
@@ -86,14 +85,15 @@
           </li>
         </template>
 
-        <!--BUTTON TO ADD NEW DECK-->
-        <button
-          class="gallery__new-deck-btn"
-          type="button"
-          aria-label="New deck"
-        >
-          + New Deck
-        </button>
+        <div class="mobile-bar">
+          <button
+            class="gallery__new-deck-btn"
+            type="button"
+            aria-label="Add a new deck"
+          >
+            + New Deck
+          </button>
+        </div>
       </section>
 
       <!-- Existing home section -->
