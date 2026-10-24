@@ -72,3 +72,10 @@
   text-decoration: none;
   cursor: pointer;
 }
+
+@media screen and (max-width: 630px) {
+  .gallery__list {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

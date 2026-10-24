@@ -90,3 +90,20 @@
   font-size: 16px;
   line-height: 1.2;
 }
+
+@media screen and (max-width: 630px) {
+  .card {
+    width: 100%;
+    height: auto;
+    padding: 16px;
+    aspect-ratio: 353 / 205;
+  }
+
+  .card__title {
+    font-size: 20px;
+  }
+
+  .card__count {
+    font-size: 14px;
+  }
+}
