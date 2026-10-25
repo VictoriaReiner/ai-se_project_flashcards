@@ -17,6 +17,33 @@
     z-index: 10;
   }
 
+  .gallery__new-card-btn,
+  .gallery__practice-btn {
+    height: 44px;
+    font-weight: 500;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 63px;
+    z-index: 12;
+    margin: 0;
+  }
+
+  .gallery__practice-btn {
+    right: 20px;
+    width: calc(50% - 26px);
+    margin: 0;
+  }
+
+  .gallery__new-card-btn_location_deck-view {
+    left: 20px;
+    width: calc(50% - 26px);
+    background-color: rgba(204, 204, 204, 0.8);
+    margin: 0;
+  }
+
   .mobile-bar .gallery__new-deck-btn {
     position: static;
     width: 100%;
