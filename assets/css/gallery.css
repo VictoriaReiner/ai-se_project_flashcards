@@ -8,9 +8,8 @@
 .gallery__title {
   width: 100%;
   font-weight: 700;
-  font-size: 40px;
+  font-size: 32px;
   margin: 0;
-  margin-bottom: 40px;
 }
 
 .gallery__header {
@@ -74,6 +73,13 @@
 }
 
 @media screen and (max-width: 630px) {
+  .gallery {
+    padding: 0 20px;
+  }
+
+  .gallery__title {
+    margin-top: 0;
+  }
   .gallery__list {
     grid-template-columns: 1fr;
     gap: 20px;
