@@ -66,6 +66,14 @@
     height: 160px;
   }
 
+  .page_no-mobile-bar::after {
+    display: none;
+  }
+
+  .page_location_carousel .footer {
+    position: static;
+  }
+
   .page {
     padding-bottom: 0;
   }

@@ -32,6 +32,7 @@ practiceButton?.addEventListener("click", (event) => {
 function router() {
   const hash = location.hash || "#home";
   const mainContent = document.querySelector(".page__main-content");
+  const pageElement = document.querySelector(".page");
 
   if (homeSection) {
     homeSection.style.display = "none";
@@ -49,6 +50,10 @@ function router() {
     mainContent.classList.remove("page__main-content_location_carousel");
   }
 
+  if (pageElement) {
+    pageElement.classList.remove("page_no-mobile-bar");
+  }
+
   if (hash === "#home" || hash === "") {
     if (homeSection) homeSection.style.display = "";
   } else if (hash.startsWith("#deck/")) {
@@ -60,6 +65,7 @@ function router() {
       renderDeckView(deck);
     } else if (notFoundSection) {
       notFoundSection.style.display = "";
+      pageElement?.classList.add("page_no-mobile-bar");
     }
   } else if (hash.startsWith("#carousel/")) {
     const deckId = hash.split("/")[1];
@@ -68,11 +74,13 @@ function router() {
     if (deck) {
       currentDeck = deck;
       renderCarouselView(deck);
+      pageElement?.classList.add("page_no-mobile-bar");
     } else {
       if (notFoundSection) notFoundSection.style.display = "";
     }
   } else {
     if (notFoundSection) notFoundSection.style.display = "";
+    pageElement?.classList.add("page_no-mobile-bar");
   }
 }
 

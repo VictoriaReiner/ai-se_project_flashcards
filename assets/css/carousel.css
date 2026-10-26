@@ -11,12 +11,13 @@
   margin-bottom: 32px;
 }
 
-.carousel__wrapper {
+.carousel__grid {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 20px;
   margin-bottom: 24px;
+  box-sizing: border-box;
 }
 
 .carousel__card {
@@ -59,4 +60,41 @@
 
 .carousel__card_color_white {
   background-color: #ffffff;
+}
+
+@media screen and (max-width: 630px) {
+  .carousel__grid {
+    display: grid;
+    grid-template-areas:
+      "card card card"
+      "prev flip next";
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    row-gap: 32px;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  .carousel__card {
+    grid-area: card;
+    width: 100%;
+  }
+
+  .carousel__btn_type_left {
+    grid-area: prev;
+    justify-self: start;
+  }
+
+  .card__btn_type_flip {
+    grid-area: flip;
+    justify-self: center;
+    width: 44px;
+    height: 44px;
+  }
+
+  .carousel__btn_type_right {
+    grid-area: next;
+    justify-self: end;
+  }
 }
