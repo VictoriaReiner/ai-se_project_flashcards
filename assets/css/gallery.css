@@ -74,7 +74,7 @@
 
 @media screen and (max-width: 630px) {
   .gallery {
-    padding: 0 20px;
+    padding: 0;
   }
 
   .gallery__title {
