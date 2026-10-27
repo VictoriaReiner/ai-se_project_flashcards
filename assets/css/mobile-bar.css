@@ -9,11 +9,6 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    background: linear-gradient(
-      to top,
-      rgba(236, 236, 236, 1) 35%,
-      rgba(236, 236, 236, 0) 100%
-    );
     z-index: 10;
   }
 
@@ -69,14 +64,16 @@
     background: linear-gradient(to bottom, transparent 0%, #ececec 35%);
     pointer-events: none;
     z-index: 9;
-    height: 160px;
+    bottom: 0;
+    left: 0;
+    right: 0;
   }
 
   .page_no-mobile-bar::after {
     display: none;
   }
 
-  .page_no_mobile-bar .footer {
+  .page_no-mobile-bar .footer {
     position: static;
   }
 
