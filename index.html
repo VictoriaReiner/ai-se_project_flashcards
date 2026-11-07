@@ -108,9 +108,117 @@
             type="button"
             class="gallery__new-card-btn gallery__new-card-btn_location_deck-view"
           >
-            + New Deck
+            + New Card
           </button>
         </div>
+      </section>
+
+      <!--NEW DECK VIEW SECTION-->
+      <section class="new-deck-view" id="new-deck-view">
+        <h2 class="new-deck-view__title">New Deck</h2>
+
+        <form class="new-deck-view__form" id="new-deck-form">
+          <!-- COLOR PICKER-->
+          <fieldset class="new-deck-view__color-picker">
+            <legend class="new-deck-view__legend">Pick the deck color</legend>
+            <div class="new-deck-view__color-options">
+              <!--GREEN-->
+              <label for="green" class="new-deck-view__color-label">
+                <input
+                  type="radio"
+                  id="green"
+                  name="new-deck-color"
+                  value="#64D583"
+                  class="new-deck-view__color-input new-deck-view__color-input_color_green"
+                  aria-label="Green"
+                  checked
+                />
+              </label>
+
+              <!--BLUE-->
+              <label for="blue" class="new-deck-view__color-label">
+                <input
+                  type="radio"
+                  id="blue"
+                  name="new-deck-color"
+                  value="#91A8F9"
+                  class="new-deck-view__color-input new-deck-view__color-input_color_blue"
+                  aria-label="Blue"
+                />
+              </label>
+
+              <!--PURPLE-->
+              <label for="purple" class="new-deck-view__color-label">
+                <input
+                  type="radio"
+                  id="purple"
+                  name="new-deck-color"
+                  value="#AA8EF0"
+                  class="new-deck-view__color-input new-deck-view__color-input_color_purple"
+                  aria-label="Purple"
+                />
+              </label>
+
+              <!--PINK-->
+              <label for="pink" class="new-deck-view__color-label">
+                <input
+                  type="radio"
+                  id="pink"
+                  name="new-deck-color"
+                  value="#EE92D7"
+                  class="new-deck-view__color-input new-deck-view__color-input_color_pink"
+                  aria-label="Pink"
+                />
+              </label>
+
+              <!--ORANGE-->
+              <label for="orange" class="new-deck-view__color-label">
+                <input
+                  type="radio"
+                  id="orange"
+                  name="new-deck-color"
+                  value="#EE955E"
+                  class="new-deck-view__color-input new-deck-view__color-input_color_orange"
+                  aria-label="Orange"
+                />
+              </label>
+
+              <!--YELLOW-->
+              <label for="yellow" class="new-deck-view__color-label">
+                <input
+                  type="radio"
+                  id="yellow"
+                  name="new-deck-color"
+                  value="#F5D770"
+                  class="new-deck-view__color-input new-deck-view__color-input_color_yellow"
+                  aria-label="Yellow"
+                />
+              </label>
+            </div>
+          </fieldset>
+
+          <!--JSON TEXT AREA-->
+          <label for="new-deck-data" class="new-deck-view__label"
+            >Enter a JSON object with a name, a cards array, and an optional
+            color.
+            <textarea
+              id="new-deck-data"
+              name="new-deck-data"
+              class="new-deck-view__textarea"
+              required
+            ></textarea>
+          </label>
+
+          <!--SUBMIT BUTTON-->
+          <button
+            id="new-deck-submit-btn"
+            type="submit"
+            class="new-deck-view__submit-btn"
+            disabled
+          >
+            Create new deck
+          </button>
+        </form>
       </section>
 
       <!--CAROUSEL SECTION-->
@@ -158,5 +266,23 @@
     <footer class="footer">
       <p class="footer__text">© 2026 Victoria Reiner</p>
     </footer>
+
+    <div
+      class="modal"
+      id="error-modal"
+      role="alertdialog"
+      aria-modal="true"
+      aria-hidden="true"
+      aria-labelledby="error-modal-title"
+      aria-describedby="error-modal-message"
+    >
+      <div class="modal__content">
+        <h2 class="modal__title" id="error-modal-title">
+          An error has occurred
+        </h2>
+        <p class="modal__error" id="error-modal-message"></p>
+        <button type="button" class="modal__close">Dismiss</button>
+      </div>
+    </div>
   </body>
 </html>
