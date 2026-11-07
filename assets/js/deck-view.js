@@ -34,11 +34,11 @@ export function renderDeckView(deck) {
     });
 
     deleteButton.addEventListener("click", () => {
-      const cardIndex = deck.cards.findIndex((item) => item.id === card.id);
+      const cardIndex = deck.cards.findIndex((item) => item._id === card._id);
       if (cardIndex !== -1) deck.cards.splice(cardIndex, 1);
       const deckLink = Array.from(
         document.querySelectorAll("#home .card__link"),
-      ).find((link) => link.getAttribute("href") === `#deck/${deck.id}`);
+      ).find((link) => link.getAttribute("href") === `#deck/${deck._id}`);
       const countElement =
         deckLink?.parentElement.querySelector(".card__count");
       if (countElement) countElement.textContent = `${deck.cards.length} cards`;

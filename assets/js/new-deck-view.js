@@ -1,4 +1,4 @@
-import { decks } from "./decks.js";
+import { fetchedDecks } from "./decks.js";
 
 const errorModal = document.querySelector("#error-modal");
 const errorModalMessage = errorModal?.querySelector(".modal__error");
@@ -168,11 +168,11 @@ form?.addEventListener("submit", (e) => {
     name: name,
     cards: cards.map((card, index) => ({
       ...card,
-      id: card.id ?? `${id}-${index + 1}`,
+      id: card._id ?? `${id}-${index + 1}`,
     })),
   };
 
-  decks.push(newDeck);
+  fetchedDecks.push(newDeck);
 
   window.location.hash = `deck/${id}`;
 });

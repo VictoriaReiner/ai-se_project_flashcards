@@ -1,4 +1,4 @@
-import { getDeckByID } from "./decks.js";
+import { getDeckByID, fetchedDecks } from "./decks.js";
 import { renderDeckEl, renderCarouselView } from "./carousel.js";
 import { renderDeckView } from "./deck-view.js";
 import { enableSubmitBtn, showError } from "./new-deck-view.js";
@@ -8,6 +8,7 @@ let currentDeck = null;
 
 getDecks()
   .then((decks) => {
+    fetchedDecks.push(...decks);
     decks.forEach(renderDeckEl);
   })
   .catch(() => {
@@ -37,7 +38,7 @@ deckList?.addEventListener("click", (event) => {
 practiceButton?.addEventListener("click", (event) => {
   event.preventDefault();
   if (currentDeck) {
-    location.hash = `#carousel/${currentDeck.id}`;
+    location.hash = `#carousel/${currentDeck._id}`;
   }
 });
 
@@ -110,3 +111,5 @@ function router() {
 }
 
 window.addEventListener("hashchange", router);
+
+router();
