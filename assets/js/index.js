@@ -23,6 +23,7 @@ const deckSection = document.querySelector("#deck-view");
 const notFoundSection = document.querySelector("#not-found");
 const carouselSection = document.querySelector("#carousel");
 const newDeckSection = document.querySelector("#new-deck-view");
+const aboutSection = document.querySelector("#about");
 const deckList = document.querySelector("#home .gallery__list");
 const practiceButton = document.querySelector(
   "#deck-view .gallery__practice-btn",
@@ -67,6 +68,9 @@ function router() {
   if (newDeckSection) {
     newDeckSection.style.display = "none";
   }
+  if (aboutSection) {
+    aboutSection.style.display = "none";
+  }
   if (mainContent) {
     mainContent.classList.remove("page__main-content_location_carousel");
   }
@@ -80,6 +84,10 @@ function router() {
       newDeckSection.style.display = "block";
     }
     enableSubmitBtn();
+  } else if (hash === "#about") {
+    if (aboutSection) {
+      aboutSection.style.display = "block";
+    }
   } else if (hash === "#home" || hash === "") {
     if (homeSection) homeSection.style.display = "";
   } else if (hash.startsWith("#deck/")) {
