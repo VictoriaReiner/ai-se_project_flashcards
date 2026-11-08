@@ -5,6 +5,11 @@ const deckTitle = deckSection?.querySelector(".gallery__title");
 const cardList = deckSection?.querySelector(".gallery__list");
 const cardTemplate = document.querySelector("#flashcard-template");
 
+/**
+ * Displays a deck's flashcards as a list with flip and delete controls.
+ * @param {{_id: string, name: string, color: string, cards: Array<{_id?: string, question: string, answer: string}>}} deck The deck to display.
+ * @returns {void}
+ */
 export function renderDeckView(deck) {
   if (!deckSection || !cardList || !cardTemplate) return;
 

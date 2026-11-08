@@ -48,6 +48,10 @@ newDeckButton?.addEventListener("click", () => {
   location.hash = "#new-deck";
 });
 
+/**
+ * Shows the view selected by the current location hash.
+ * @returns {void}
+ */
 function router() {
   const hash = location.hash || "#home";
   const mainContent = document.querySelector(".page__main-content");

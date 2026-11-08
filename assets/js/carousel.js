@@ -6,10 +6,22 @@ import { showError } from "./new-deck-view.js";
 const deckList = document.querySelector(".gallery__list");
 const deckTemplate = document.querySelector("#deck-template");
 
+/**
+ * Formats the carousel title with the current one-based card position.
+ * @param {string} deckName The name of the deck being studied.
+ * @param {number} cardIndex The zero-based index of the current card.
+ * @param {number} totalCards The total number of cards in the deck.
+ * @returns {string} The formatted carousel title.
+ */
 export function getCarouselTitleString(deckName, cardIndex, totalCards) {
   return `${deckName} · ${cardIndex + 1}/${totalCards}`;
 }
 
+/**
+ * Creates a deck list element and connects its delete and navigation actions.
+ * @param {{_id: string, name: string, color: string, cards?: Array<{_id?: string, question: string, answer: string}>}} item The deck to represent.
+ * @returns {HTMLElement} The cloned deck element.
+ */
 export function createDeckEl(item) {
   const deckElement = deckTemplate.content
     .querySelector(".card")
@@ -51,6 +63,11 @@ export function createDeckEl(item) {
   return deckElement;
 }
 
+/**
+ * Creates and prepends a deck element to the deck list when the list exists.
+ * @param {{_id: string, name: string, color: string, cards?: Array<{_id?: string, question: string, answer: string}>}} item The deck to render.
+ * @returns {void}
+ */
 export function renderDeckEl(item) {
   const deckElement = createDeckEl(item);
   if (deckList && deckElement) {
@@ -58,6 +75,11 @@ export function renderDeckEl(item) {
   }
 }
 
+/**
+ * Displays a deck's flashcards in the interactive carousel.
+ * @param {{_id: string, name: string, color: string, cards: Array<{_id?: string, question: string, answer: string}>}} deck The deck to study.
+ * @returns {void}
+ */
 export function renderCarouselView(deck) {
   const homeSection = document.querySelector("#home");
   const carouselSection = document.querySelector("#carousel");
@@ -92,6 +114,10 @@ export function renderCarouselView(deck) {
     }
   }
 
+  /**
+   * Updates the visible card, title, and carousel navigation state.
+   * @returns {void}
+   */
   function updateDisplay() {
     if (!deck || !deck.cards || deck.cards.length === 0) return;
 

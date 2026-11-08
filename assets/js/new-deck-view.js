@@ -6,16 +6,31 @@ const errorModal = document.querySelector("#error-modal");
 const errorModalMessage = errorModal?.querySelector(".modal__error");
 const errorModalCloseBtn = errorModal?.querySelector(".modal__close");
 
+/**
+ * Makes a modal visible to sighted users and accessibility APIs.
+ * @param {Element|null} modal The modal element to open.
+ * @returns {void}
+ */
 function openModal(modal) {
   modal?.classList.add("modal_visible");
   modal?.setAttribute("aria-hidden", "false");
 }
 
+/**
+ * Hides a modal from sighted users and accessibility APIs.
+ * @param {Element|null} modal The modal element to close.
+ * @returns {void}
+ */
 function closeModal(modal) {
   modal?.classList.remove("modal_visible");
   modal?.setAttribute("aria-hidden", "true");
 }
 
+/**
+ * Displays an error message in the error modal.
+ * @param {string} message The message to display.
+ * @returns {void}
+ */
 export function showError(message) {
   if (errorModalMessage) {
     errorModalMessage.textContent = message;
@@ -23,6 +38,11 @@ export function showError(message) {
   openModal(errorModal);
 }
 
+/**
+ * Trims and validates a deck name against the supported length limits.
+ * @param {unknown} name The value to validate.
+ * @returns {string|null} The trimmed name, or null when invalid.
+ */
 function validateName(name) {
   if (typeof name !== "string") {
     return null;
@@ -34,6 +54,11 @@ function validateName(name) {
   return trimmedName;
 }
 
+/**
+ * Parses JSON text, returning undefined when the text is invalid.
+ * @param {string} jsonString The JSON text to parse.
+ * @returns {unknown|undefined} The parsed JSON value, or undefined on a parse error.
+ */
 function parseJSON(jsonString) {
   try {
     return JSON.parse(jsonString);
@@ -48,6 +73,11 @@ errorModalCloseBtn?.addEventListener("click", () => {
 
 const HEX_DIGITS = /^[0-9a-fA-F]{6}$/;
 
+/**
+ * Normalizes a six-digit hex color or returns the default deck color.
+ * @param {string|null|undefined} color The selected color value.
+ * @returns {string} A lowercase hex color prefixed with "#".
+ */
 function normalizeColor(color) {
   if (!color) return "#64d583";
   const hex = color.startsWith("#") ? color.slice(1) : color;
@@ -58,6 +88,10 @@ function normalizeColor(color) {
 const form = document.querySelector("#new-deck-form");
 const submitBtn = document.querySelector("#new-deck-submit-btn");
 
+/**
+ * Enables the new-deck form submit button when it exists.
+ * @returns {void}
+ */
 export function enableSubmitBtn() {
   if (submitBtn) {
     submitBtn.disabled = false;
