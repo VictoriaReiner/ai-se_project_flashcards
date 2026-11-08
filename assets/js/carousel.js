@@ -1,4 +1,7 @@
 import { hexToString, removeColorClasses } from "./colors.js";
+import { deleteDeck } from "./api.js";
+import { fetchedDecks } from "./decks.js";
+import { showError } from "./new-deck-view.js";
 
 const deckList = document.querySelector(".gallery__list");
 const deckTemplate = document.querySelector("#deck-template");
@@ -19,12 +22,22 @@ export function createDeckEl(item) {
 
   const deleteButton = deckElement.querySelector(".card__btn_type_delete");
   deleteButton?.addEventListener("click", () => {
-    deckElement.remove();
+    deleteDeck(item._id)
+      .then(() => {
+        deckElement.remove();
+        const index = fetchedDecks.findIndex((d) => d._id === item._id);
+        if (index !== -1) {
+          fetchedDecks.splice(index, 1);
+        }
+      })
+      .catch(() => {
+        showError("Can't delete deck");
+      });
   });
 
   const deckLink = deckElement.querySelector(".card__link");
   if (deckLink) {
-    deckLink.href = `#deck/${item.id}`;
+    deckLink.href = `#deck/${item._id}`;
   }
 
   const titleElement = deckElement.querySelector(".card__title");

@@ -15,3 +15,10 @@ function processResponse(res) {
 export function getDecks() {
   return fetch(`${baseUrl}/decks`, { headers }).then(processResponse);
 }
+
+export function deleteDeck(id) {
+  return fetch(`${baseUrl}/decks/${id}`, {
+    method: "DELETE",
+    headers,
+  }).then(processResponse);
+}
