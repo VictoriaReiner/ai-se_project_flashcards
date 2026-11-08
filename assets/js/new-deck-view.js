@@ -1,4 +1,6 @@
+import { addDeck } from "./api.js";
 import { fetchedDecks } from "./decks.js";
+import { renderDeckEl } from "./carousel.js";
 
 const errorModal = document.querySelector("#error-modal");
 const errorModalMessage = errorModal?.querySelector(".modal__error");
@@ -46,30 +48,6 @@ errorModalCloseBtn?.addEventListener("click", () => {
 
 const HEX_DIGITS = /^[0-9a-fA-F]{6}$/;
 
-/**
- * Converts a string to a URL-safe slug: lowercase with any run of
- * non-alphanumeric characters replaced by a single hyphen, and no leading or
- * trailing hyphens.
- *
- * @param {string} str
- * @returns {string}
- */
-function slugify(str) {
-  return str
-    .toLowerCase()
-    .trim()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
-
-/**
- * Returns a consistent lowercase hex color string with a leading "#".
- * Accepts values with or without a leading "#". Returns "#64d583" as a
- * fallback if the value is missing or not a valid 6-digit hex.
- *
- * @param {string|undefined} color
- * @returns {string}
- */
 function normalizeColor(color) {
   if (!color) return "#64d583";
   const hex = color.startsWith("#") ? color.slice(1) : color;
@@ -160,19 +138,17 @@ form?.addEventListener("submit", (e) => {
     }
   }
 
-  const id = `${slugify(name)}-${Date.now()}`;
-
-  const newDeck = {
-    id: id,
-    color: color,
+  addDeck({
     name: name,
-    cards: cards.map((card, index) => ({
-      ...card,
-      id: card._id ?? `${id}-${index + 1}`,
-    })),
-  };
-
-  fetchedDecks.push(newDeck);
-
-  window.location.hash = `deck/${id}`;
+    cards: cards,
+    color: color,
+  })
+    .then((newDeck) => {
+      fetchedDecks.push(newDeck);
+      renderDeckEl(newDeck);
+      window.location.hash = `deck/${newDeck._id}`;
+    })
+    .catch(() => {
+      showError("Can't create deck");
+    });
 });
